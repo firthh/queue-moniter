@@ -1,8 +1,5 @@
 - hosts: all
   tasks:
-  - name: update
-    apt: update_cache=yes cache_valid_time=3600
-    sudo: true
   - name: download signing key
     apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
     sudo: true
@@ -12,6 +9,11 @@
   - name: oracle repo
     apt_repository: repo='ppa:webupd8team/java' state=present
     sudo: true
+  - name: Deal with the Oracle license
+    shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+  - name: update
+    apt: update_cache=yes cache_valid_time=3600
+    sudo: true
   - name: java
-    apt: name=oracle-java8-installer state=present
+    apt: name=oracle-java8-installer state=present  update-cache=yes force=yes
     sudo: true
