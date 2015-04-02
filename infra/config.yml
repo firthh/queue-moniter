@@ -25,11 +25,11 @@
     copy: src=../app.jar dest=/monitor/app.jar
     sudo: true
   - name: copy start script
-    copy: src=../start.sh dest=/monitor/start.sh
+    copy: src=../start.sh dest=/monitor/start.sh mode=777
     sudo: true
 
   - name: copy upstart job
-    copy: src=files/upstart.conf dest=/etc/init/busmonitor.conf
+    copy: src=files/upstart.conf dest=/etc/init/busmonitor.conf mode=0644
     sudo: true
   - name: verfiy service
     shell: init-checkconf /etc/init/busmonitor.conf
