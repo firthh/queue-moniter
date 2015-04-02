@@ -20,5 +20,7 @@
 
   - name: copy app
     copy: src=../app.jar dest=/monitor/app.jar
+    sudo: true
   - name: copy start script
     copy: src=../start.sh dest=/monitor/start.sh
+    sudo: true
