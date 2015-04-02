@@ -3,3 +3,6 @@
   - name: update
     apt: update_cache=yes cache_valid_time=3600
     sudo: true
+  - name: java
+    apt: name=oracle-java8-installer state=present
+    sudo: true
