@@ -19,7 +19,7 @@
     sudo: true
 
   - name: make dir
-    shell: mkdir /monitor
+    file: path=/monitor owner=ubuntu group=ubuntu state=directory
     sudo: true
   - name: copy app
     copy: src=../app.jar dest=/monitor/app.jar
