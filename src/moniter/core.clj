@@ -11,7 +11,7 @@
       pprint))
 
 (defn -main [& args]
-  (let [component (q/create-queue "rapids")]
+  (let [component (q/create-queue "test" {:uri (first args)})]
     (println  " [*] Waiting for messages... To exit press CTRL+C")
     (q/subscribe component message-handler)
     (.stop component)))
