@@ -19,6 +19,6 @@
     sudo: true
 
   - name: copy app
-    copy: src=app.jar dest=/monitor/app.jar
+    copy: src=../app.jar dest=/monitor/app.jar
   - name: copy start script
-    copy: src=start.sh dest=/monitor/start.sh
+    copy: src=../start.sh dest=/monitor/start.sh
