@@ -17,3 +17,8 @@
   - name: java
     apt: name=oracle-java8-installer state=present  update-cache=yes force=yes
     sudo: true
+
+  - name: copy app
+    copy: src=app.jar dest=/monitor/app.jar
+  - name: copy start script
+    copy: src=start.sh dest=/monitor/start.sh
