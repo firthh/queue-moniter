@@ -5,11 +5,13 @@
     sudo: true
   - name: download signing key
     apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+    sudo: true
   - name: software properties
     apt: name=software-properties-common state=present
     sudo: true
   - name: oracle repo
     apt_repository: repo='ppa:webupd8team/java' state=present
+    sudo: true
   - name: java
     apt: name=oracle-java8-installer state=present
     sudo: true
