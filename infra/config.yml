@@ -27,3 +27,9 @@
   - name: copy start script
     copy: src=../start.sh dest=/monitor/start.sh
     sudo: true
+
+  - name: copy upstart job
+    copy: src=files/upstart.conf dest=/etc/init/busmonitor.conf
+    sudo: true
+  - name: verfiy service
+    shell: init-checkconf /etc/init/busmonitor.conf
