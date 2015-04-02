@@ -18,6 +18,9 @@
     apt: name=oracle-java8-installer state=present  update-cache=yes force=yes
     sudo: true
 
+  - name: make dir
+    shell: mkdir /monitor
+    sudo: true
   - name: copy app
     copy: src=../app.jar dest=/monitor/app.jar
     sudo: true
