@@ -35,3 +35,4 @@
     shell: init-checkconf /etc/init/busmonitor.conf
   - name: start service
     service: name=busmonitor state=reloaded
+    sudo: true
